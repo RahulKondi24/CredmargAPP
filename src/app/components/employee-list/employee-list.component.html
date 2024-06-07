@@ -1,0 +1,41 @@
+<div class="container mt-4">
+    <h2>Employee List</h2>
+    <form (ngSubmit)="addEmployee()" class="mb-4">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" id="name" [(ngModel)]="newEmployee.name" name="name" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="designation" class="form-label">Designation:</label>
+        <input type="text" id="designation" [(ngModel)]="newEmployee.designation" name="designation" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="ctc" class="form-label">CTC:</label>
+        <input type="number" id="ctc" [(ngModel)]="newEmployee.ctc" name="ctc" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" id="email" [(ngModel)]="newEmployee.email" name="email" class="form-control" required />
+      </div>
+      <button type="submit" class="btn btn-primary">Add Employee</button>
+    </form>
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th>Name</th>
+          <th>Designation</th>
+          <th>CTC</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.designation }}</td>
+          <td>{{ employee.ctc }}</td>
+          <td>{{ employee.email }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

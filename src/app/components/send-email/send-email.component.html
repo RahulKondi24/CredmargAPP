@@ -1,0 +1,11 @@
+<div class="container">
+    <h2>Send Email to Vendors</h2>
+    <form (ngSubmit)="sendEmails()">
+      <div *ngFor="let vendor of vendors" class="mb-3 form-check">
+        <input type="checkbox" [value]="vendor.email" [(ngModel)]="selectedVendors" name="selectedVendors" class="form-check-input" />
+        <label class="form-check-label">{{ vendor.name }}</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Send Email</button>
+    </form>
+  </div>
+  

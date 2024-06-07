@@ -1,0 +1,35 @@
+<div class="container">
+    <h2>Vendor List</h2>
+    <form (ngSubmit)="addVendor()">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" id="name" [(ngModel)]="newVendor.name" name="name" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" id="email" [(ngModel)]="newVendor.email" name="email" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="upi" class="form-label">UPI:</label>
+        <input type="text" id="upi" [(ngModel)]="newVendor.upi" name="upi" class="form-control" required />
+      </div>
+      <button type="submit" class="btn btn-primary">Add Vendor</button>
+    </form>
+    <table class="table table-bordered mt-4">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>UPI</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vendor of vendors">
+          <td>{{ vendor.name }}</td>
+          <td>{{ vendor.email }}</td>
+          <td>{{ vendor.upi }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
